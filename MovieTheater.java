@@ -42,8 +42,22 @@ public class MovieTheater {
                 System.out.println("Seat reserved!");
             } else {
                 System.out.println("That seat is already reserved.");
-            }
 
+                // Find an available seat
+                boolean foundSeat = false;
+
+                for (int r = 0; r < 5; r++) {
+                    for (int s = 0; s < 5; s++) {
+
+                        if (seats[r][s] == 'O' && foundSeat == false) {
+                            System.out.println("Available seat: Row " + (r + 1)
+                                    + ", Seat " + (s + 1));
+
+                            foundSeat = true;
+                        }
+                    }
+                }
+            }
             // Display updated seating chart
             System.out.println("\nUpdated Seating Chart:");
 
